@@ -1,7 +1,8 @@
 # React Ts Todo list with slide drop
 
-### *Little projet i did few months ago to practice TypeScript on a React project The most interesting part was to investigate the slide and drop part. I did not use any libraries for it*
+### *Little projet i did few months ago to practice TypeScript on a React project. The most interesting part was to investigate how to make the slide and drop feature without using external library*
 
+## Functionalities :
 
 - Add a todo
 - Delete a todo
