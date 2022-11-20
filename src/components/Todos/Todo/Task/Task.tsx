@@ -1,11 +1,13 @@
-import React, { ChangeEvent, useEffect, useRef, useState } from "react"
+import React, { SetStateAction, useEffect, useRef, useState } from "react"
 import { useTodosContext } from "../../../../TodosContextProvider"
 import { TodoType } from "../../../../types"
 import styles from "./Task.module.scss"
 
 interface Props {
   task: string,
-  id: string
+  id: string,
+  isEditing: boolean,
+  setIsEditing: React.Dispatch<SetStateAction<boolean>>
 }
 
 const Task = (props: Props) => {
@@ -14,8 +16,7 @@ const Task = (props: Props) => {
   const taskRef = useRef<HTMLParagraphElement>(null)
   const taskRefWidth = useRef<null | number>(null)
   const taskRefHeight = useRef<null | number>(null)
-  const inputRef = useRef<HTMLInputElement>(null)
-  // const [isEditing, setIsEditing] = useState(false)
+  const inputRef = useRef<HTMLTextAreaElement>(null)
   const [editedText, setEditedText] = useState(task)
 
   const handleClick = () => {
@@ -63,7 +64,6 @@ const Task = (props: Props) => {
     isEditing
       ? (
         <textarea
-          type="text"
           className={styles.text}
           value={editedText}
           ref={inputRef}

@@ -1,8 +1,10 @@
+
+
 const formatDate = (createdAt: number) => {
 
   const date = new Date(createdAt)
 
-  const options = {
+  const options: Intl.DateTimeFormatOptions = {
     month: 'numeric',
     day: "numeric",
     hour: 'numeric',

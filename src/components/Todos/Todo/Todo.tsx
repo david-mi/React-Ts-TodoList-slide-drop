@@ -18,18 +18,17 @@ const Todo = (props: Props) => {
   const { id, color, task, createdAt } = todo
 
   const { todos, setTodos } = useTodosContext()
-  const containerRef = useRef<HTMLElement>(null!)
+  const containerRef = useRef<HTMLDivElement>(null!)
   const clientYInitRef = useRef<null | number>(null)
   const clientXInitRef = useRef<null | number>(null)
   const [isHolding, setIsHolding] = useState(false);
 
   const [isEditing, setIsEditing] = useState(false)
 
-  const targetIndexRef = useRef<null | number>(null)
+  const targetIndexRef = useRef<null | number>(null)!
   targetIndexRef.current = targetIndex
 
-  const handleMouseDown = (e: MouseEvent) => {
-    console.log("down")
+  const handleMouseDown = (e: React.MouseEvent) => {
     clientYInitRef.current = e.clientY
     clientXInitRef.current = e.clientX
     setStartingIndex(Number(containerRef.current.dataset.index))
@@ -38,7 +37,6 @@ const Todo = (props: Props) => {
   }
 
   const handleMouseUp = () => {
-    console.log("up")
     containerRef.current.style.bottom = "auto"
     containerRef.current.style.right = "auto"
     containerRef.current.style.zIndex = "5"
@@ -51,7 +49,7 @@ const Todo = (props: Props) => {
       const todosMap = todos.map((todo, index) => {
         switch (index) {
           case startingIndex:
-            return { ...todos[targetIndexRef.current] };
+            return { ...todos[targetIndexRef.current!] };
           case targetIndexRef.current:
             return { ...todos[startingIndex] };
           default:
@@ -72,7 +70,7 @@ const Todo = (props: Props) => {
 
 
     if (e.target instanceof HTMLElement && e.target.closest("[data-index]") !== null) {
-      const checkTodoContainer = e.target.closest("[data-index]")
+      const checkTodoContainer = e.target.closest("[data-index]") as HTMLElement
       setTargetIndex(Number(checkTodoContainer.dataset.index))
     }
   }
