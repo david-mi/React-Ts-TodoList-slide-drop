@@ -1,0 +1,17 @@
+:root {
+  --clr-main: #16213e;
+  --clr-second: #0f3460;
+  --clr-third: #e94560;
+  --clr-shadow: #9e9e9e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  background-color: var(--clr-main);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}

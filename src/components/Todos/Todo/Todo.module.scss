@@ -1,0 +1,27 @@
+.container {
+  display: grid;
+  position: relative;
+  z-index: 5;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 20px 1fr;
+  grid-template-areas:
+    ". date"
+    "task deleteBtn";
+  color: white;
+  font-size: 1.2rem;
+  padding-inline: 10px;
+  background-color: var(--clr-third);
+  box-shadow: 0 0 2px var(--clr-shadow);
+  max-width: 400px;
+  min-width: 200px;
+  user-select: none;
+
+  &::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    border-top-width: 20px;
+    border-top-style: solid;
+    border-top-color: white;
+  }
+}

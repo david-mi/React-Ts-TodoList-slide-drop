@@ -1,0 +1,10 @@
+input {
+  border: solid 2px rgb(184, 184, 184);
+  padding: 5px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+
+  &:focus {
+    outline-color: var(--clr-main);
+  }
+}

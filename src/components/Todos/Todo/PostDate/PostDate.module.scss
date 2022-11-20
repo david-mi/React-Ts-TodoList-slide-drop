@@ -1,0 +1,11 @@
+.date {
+  grid-area: date;
+  position: relative;
+  z-index: 1;
+  justify-self: flex-end;
+  align-self: center;
+  font-size: 0.7rem;
+  color: black;
+  font-weight: bold;
+  white-space: nowrap;
+}

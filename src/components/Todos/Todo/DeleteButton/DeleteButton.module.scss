@@ -1,0 +1,12 @@
+.button {
+  grid-area: deleteBtn;
+  position: relative;
+  align-self: center;
+  justify-self: flex-end;
+  border-color: var(--clr-main);
+
+  i {
+    color: var(--clr-main);
+    font-size: 1.1rem;
+  }
+}

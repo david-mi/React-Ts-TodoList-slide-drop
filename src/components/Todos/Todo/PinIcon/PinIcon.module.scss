@@ -1,0 +1,16 @@
+.pinContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-main);
+  position: absolute;
+  left: 50%;
+  top: -5px;
+  transform: rotate(20deg) translateX(-50%);
+  border-radius: 100%;
+  width: 30px;
+  aspect-ratio: 1/1;
+  i {
+    position: relative;
+  }
+}

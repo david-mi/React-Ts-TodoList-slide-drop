@@ -1,0 +1,28 @@
+.task {
+  grid-area: task;
+  position: relative;
+  word-break: break-word;
+  margin-block: 20px;
+  cursor: pointer;
+  transition: 200ms ease-out;
+
+  &:hover {
+    opacity: 0.8;
+    color: var(--clr-main);
+  }
+}
+
+.text {
+  grid-area: task;
+  position: relative;
+  // display: grid;
+  // place-items: center;
+  margin-block: 20px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: white;
+  padding: 0;
+  font-size: 1.2rem;
+  resize: none;
+}
